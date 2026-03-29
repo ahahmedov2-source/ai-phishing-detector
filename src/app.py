@@ -85,10 +85,19 @@ class PhishingDetectorApp:
             import uuid
             st.session_state.user_session_id = str(uuid.uuid4())
 
-        # Показваме Session ID в страничната лента (за сега само за тестване)
+        # === ЛИЧНИ СТАТИСТИКИ ЗА ВСЕКИ ПОТРЕБИТЕЛ ===
+        user_key = f"stats_{st.session_state.user_session_id}"
+        
+        if user_key not in st.session_state:
+            st.session_state[user_key] = {
+                'total_analyses': 0,
+                'phishing_detected': 0
+            }
+
+        # Показваме в страничната лента
         with st.sidebar:
             st.caption(f"👤 Сесия ID: **{st.session_state.user_session_id[:8]}**...")
-            st.caption("🔹 Всеки браузър има своя собствена сесия")
+            st.caption("🔹 Всеки браузър има своя собствена история и статистики")
         
         # Main content area
         if not self.config_manager.is_configured():
