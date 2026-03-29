@@ -1,8 +1,23 @@
+# Virtual environment
 .venv/
+venv/
+
+# Data and reports
 data/
 reports/
+
+# Configuration with secrets
 config.json
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# OS generated files
 .DS_Store
+Thumbs.db
+
+# Logs
 *.log
