@@ -76,11 +76,22 @@ class PhishingDetectorApp:
         
         # Main header
         self.render_header()
-        
+       
         # Sidebar
         self.render_sidebar()
+
+        # === ПРОСТО РАЗДЕЛЯНЕ ПО БРАУЗЪР (Вариант 1) ===
+        if 'user_session_id' not in st.session_state:
+            import uuid
+            st.session_state.user_session_id = str(uuid.uuid4())
         
+        # Показваме session ID в страничната лента
+        with st.sidebar:
+            st.caption(f"👤 Сесия: {st.session_state.user_session_id[:8]}...")
+            st.caption("🔹 Всеки браузър има своя собствена история")
+
         # Main content area
+        if not self.config_manager.is_configured():
         if not self.config_manager.is_configured():
             self.render_configuration_page()
         else:
