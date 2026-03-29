@@ -242,7 +242,7 @@ class PhishingDetectorApp:
             border: 1px solid #c3e6cb;
             padding: 1rem;
             border-radius: 6px;
-            color: #155724;
+            color: black;
         }
         .warning-card {
             background: #fff3cd;
