@@ -164,7 +164,7 @@ class PhishingDetectorApp:
         }
         
         .stButton > button[kind="primary"]:hover {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e) !important;
+            background: linear-gradient(45deg, #ff5252, #ff7979) !important;
             box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
             transform: translateY(-2px) !important;
         }
@@ -183,6 +183,22 @@ class PhishingDetectorApp:
             font-size: 16px !important;
             padding: 0.75rem 2rem !important;
             cursor: not-allowed !important;
+        }
+
+        /* === СИН OUTLINE ЗА NAVIGATE TO SELECTBOX === */
+        .stSelectbox > div[data-baseweb="select"] {
+            border: 2px solid #4a90e2 !important;
+            border-radius: 8px !important;
+        }
+        
+        .stSelectbox:focus-within > div[data-baseweb="select"] {
+            border-color: #4a90e2 !important;
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.3) !important;
+        }
+        
+        /* По-хубав hover ефект */
+        .stSelectbox > div[data-baseweb="select"]:hover {
+            border-color: #5ba3f0 !important;
         }
         
         .risk-high {
