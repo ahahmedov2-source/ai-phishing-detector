@@ -242,7 +242,7 @@ class PhishingDetectorApp:
             border: 1px solid #c3e6cb;
             padding: 1rem;
             border-radius: 6px;
-            color: black;
+            color: #155724;
         }
         .warning-card {
             background: #fff3cd;
@@ -260,6 +260,22 @@ class PhishingDetectorApp:
         }
         .stTabs > div > div > div > div {
             padding: 1rem;
+        }
+
+        /* ВИНАГИ ЧЕРЕН ТЕКСТ ЗА SUCCESS СЪОБЩЕНИЕ */
+        .stAlert,
+        .stAlert p,
+        .stAlert span,
+        .stAlert div,
+        div[role="alert"],
+        .stAlert[data-baseweb="notification"] * {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+
+        .stAlert[data-baseweb="notification"] {
+            background-color: #d4edda !important;
+            border-left: 6px solid #28a745 !important;
         }
         </style>
         """, unsafe_allow_html=True)
