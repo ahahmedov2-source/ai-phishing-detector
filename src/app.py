@@ -79,6 +79,16 @@ class PhishingDetectorApp:
         
         # Sidebar
         self.render_sidebar()
+
+        # === УНИКАЛЕН SESSION ID ЗА ВСЕКИ ПОТРЕБИТЕЛ ===
+        if 'user_session_id' not in st.session_state:
+            import uuid
+            st.session_state.user_session_id = str(uuid.uuid4())
+
+        # Показваме Session ID в страничната лента (за сега само за тестване)
+        with st.sidebar:
+            st.caption(f"👤 Сесия ID: **{st.session_state.user_session_id[:8]}**...")
+            st.caption("🔹 Всеки браузър има своя собствена сесия")
         
         # Main content area
         if not self.config_manager.is_configured():
