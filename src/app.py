@@ -80,14 +80,14 @@ class PhishingDetectorApp:
         # Sidebar
         self.render_sidebar()
 
-        # === УНИКАЛЕН SESSION ID ЗА ВСЕКИ ПОТРЕБИТЕЛ ===
+        # === УНИКАЛЕН SESSION ID + ЛИЧНИ СТАТИСТИКИ ===
         if 'user_session_id' not in st.session_state:
             import uuid
             st.session_state.user_session_id = str(uuid.uuid4())
 
-        # === ЛИЧНИ СТАТИСТИКИ ЗА ВСЕКИ ПОТРЕБИТЕЛ ===
+        # Ключ за личните статистики на този потребител
         user_key = f"stats_{st.session_state.user_session_id}"
-        
+
         if user_key not in st.session_state:
             st.session_state[user_key] = {
                 'total_analyses': 0,
