@@ -184,12 +184,6 @@ class PhishingDetectorApp:
             padding: 0.75rem 2rem !important;
             cursor: not-allowed !important;
         }
-
-        /* === ЗАМЕНЯ ЧЕРВЕНОТО СЪС СИНЬО ПРИ КЛИКВАНЕ === */
-        .stSelectbox:focus-within > div[data-baseweb="select"] {
-            border-color: #4a90e2 !important;
-            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.4) !important;
-        }
         
         .risk-high {
             background-color: #ff4444;
