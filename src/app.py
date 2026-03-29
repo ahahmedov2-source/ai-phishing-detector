@@ -164,7 +164,7 @@ class PhishingDetectorApp:
         }
         
         .stButton > button[kind="primary"]:hover {
-            background: linear-gradient(45deg, #ff5252, #ff7979) !important;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e) !important;
             box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
             transform: translateY(-2px) !important;
         }
