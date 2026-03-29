@@ -303,14 +303,29 @@ class PhishingDetectorApp:
             else:
                 st.error("❌ Configuration required")
             
-            # Statistics
+            # Statistics - Лични за всеки потребител
             try:
-                stats = self.history_manager.get_statistics()
+                user_key = f"stats_{st.session_state.user_session_id}"
+                
+                # Ако още няма статистики за този потребител, създаваме ги
+                if user_key not in st.session_state:
+                    st.session_state[user_key] = {
+                        'total_analyses': 0,
+                        'phishing_detected': 0
+                    }
+                
+                user_stats = st.session_state[user_key]
+                
                 st.subheader("Analysis Statistics")
-                st.metric("Total Analyses", stats['total_analyses'])
-                st.metric("Phishing Detected", stats['phishing_detected'])
-                if stats['total_analyses'] > 0:
-                    st.metric("Detection Rate", f"{stats['phishing_rate']:.1f}%")
+                st.metric("Total Analyses", user_stats['total_analyses'])
+                st.metric("Phishing Detected", user_stats['phishing_detected'])
+                
+                if user_stats['total_analyses'] > 0:
+                    detection_rate = (user_stats['phishing_detected'] / user_stats['total_analyses']) * 100
+                    st.metric("Detection Rate", f"{detection_rate:.1f}%")
+                else:
+                    st.metric("Detection Rate", "0.0%")
+                    
             except Exception as e:
                 st.warning("Could not load statistics")
             
