@@ -76,12 +76,11 @@ class PhishingDetectorApp:
         
         # Main header
         self.render_header()
-       
+        
         # Sidebar
         self.render_sidebar()
-
+        
         # Main content area
-        if not self.config_manager.is_configured():
         if not self.config_manager.is_configured():
             self.render_configuration_page()
         else:
