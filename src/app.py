@@ -168,24 +168,9 @@ class PhishingDetectorApp:
             margin-bottom: 2rem;
         }
         
-        /* Enhanced button styling */
-        .stButton > button[kind="primary"] {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e) !important;
-            border: none !important;
-            border-radius: 12px !important;
-            font-size: 18px !important;
-            font-weight: bold !important;
-            padding: 0.75rem 2rem !important;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
-            transition: all 0.3s ease !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-        }
-        
-        .stButton > button[kind="primary"]:hover {
-            background: linear-gradient(45deg, #ff5252, #ff7979) !important;
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
-            transform: translateY(-2px) !important;
+        .stButton > button[kind="primary"]:active {
+            transform: translateY(0px) !important;
+            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3) !important;
         }
         
         /* Disabled button styling */
