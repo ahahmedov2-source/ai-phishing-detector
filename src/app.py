@@ -188,11 +188,6 @@ class PhishingDetectorApp:
             transform: translateY(-2px) !important;
         }
         
-        .stButton > button[kind="primary"]:active {
-            transform: translateY(0px) !important;
-            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3) !important;
-        }
-        
         /* Disabled button styling */
         .stButton > button:disabled {
             background: linear-gradient(45deg, #e9ecef, #f8f9fa) !important;
