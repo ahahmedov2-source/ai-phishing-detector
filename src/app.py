@@ -280,6 +280,25 @@ class PhishingDetectorApp:
         .stTabs > div > div > div > div {
             padding: 1rem;
         }
+
+        /* === FIX: Премахване на червения overlay на табовете === */
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    background-color: #f8f9fa !important;     /* светъл фон */
+    color: #1e3c72 !important;                /* тъмно синьо от хедера */
+    border-bottom: 3px solid #1e3c72 !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stTabs"] button {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+/* Премахваме всякакъв червен/оранжев акцент на табовете */
+div[data-testid="stTabs"] button[aria-selected="true"]::after {
+    display: none !important;
+}
         </style>
         """, unsafe_allow_html=True)
     
