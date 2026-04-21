@@ -280,23 +280,36 @@ class PhishingDetectorApp:
         .stTabs > div > div > div > div {
             padding: 1rem;
         }
+        /* === FINAL FIX: Премахване на червения tab-highlight === */
+.stTabs [data-baseweb="tab-highlight"] {
+    background-color: transparent !important;
+    height: 0px !important;
+    display: none !important;
+    box-shadow: none !important;
+}
 
-        /* === FIX: Премахване на червения overlay на табовете === */
-div[data-testid="stTabs"] button[aria-selected="true"] {
-    background-color: #f8f9fa !important;     /* светъл фон */
-    color: #1e3c72 !important;                /* тъмно синьо от хедера */
+/* Основни табове */
+.stTabs [data-baseweb="tab"] {
+    background-color: #f8f9fa !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+/* Активен таб */
+.stTabs [aria-selected="true"] {
+    background-color: #ffffff !important;
+    color: #1e3c72 !important;
+    font-weight: 600 !important;
     border-bottom: 3px solid #1e3c72 !important;
     box-shadow: none !important;
 }
 
-div[data-testid="stTabs"] button {
-    background-color: #f8f9fa !important;
-    color: #495057 !important;
-    border-radius: 6px 6px 0 0 !important;
+/* Допълнителна защита (за по-нови версии на Streamlit) */
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    background-color: #ffffff !important;
 }
 
-/* Премахваме всякакъв червен/оранжев акцент на табовете */
-div[data-testid="stTabs"] button[aria-selected="true"]::after {
+div[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background-color: transparent !important;
     display: none !important;
 }
         </style>
